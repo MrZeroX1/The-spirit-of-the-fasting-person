@@ -1,0 +1,47 @@
+/*
+Padding(
+    padding: const EdgeInsets.all(10.0),
+    child: Container(
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 1),
+          borderRadius: BorderRadius.circular(15)),
+      child: DropdownButton(
+        isExpanded: true,
+        underline: SizedBox(),
+        iconSize: 36,
+        style: TextStyle(
+          fontSize: 22,
+        ),
+        icon: Icon(Icons.arrow_drop_down),
+        dropdownColor: Color.fromARGB(255, 95, 43, 45),
+        hint: Text("اختر التقسيم الذي يناسبك"),
+        value: valueChoose,
+        onChanged: (String newValue) {
+          setState(() {
+            valueChoose = newValue;
+          });
+        },
+        items: listItem.map((String valueItem) =>
+            DropdownMenuItem<String>(
+              value: valueItem,
+              child: Text(valueItem),
+            ) ).toList(),
+            
+            List<String> listitems = ["Tokyo", "London", "New York", "Sanghai", "Moscow", "Hong Kong"];
+String selectval = "Tokyo";
+
+DropdownButton(
+    value: selectval, //implement initial value or selected value
+    onChanged: (value){
+        setState(() { //set state will update UI and State of your App
+          selectval = value.toString(); //change selectval to new value
+        });
+    },
+    items: listitems.map((itemone){
+        return DropdownMenuItem(
+          value: itemone,
+          child: Text(itemone)
+        );
+    }).toList(),
+)
+ Full C*/
